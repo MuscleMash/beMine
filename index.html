@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #55aaaa;
+        }
+
+        p {
+            font-family: 'Great Vibes', cursive; /* A cursive font for elegance */
+            color: #D81B60; /* A deep pink color */
+            font-size: 34px; /* Larger font size for readability */
+            text-align: center; /* Center align text */
+            margin: 20px 0; /* Spacing above and below the text */
+            /* background-color: #fff0f0; /* Soft pink background */
+            padding: 10px;
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Optional: Add a heart or other decorative pseudo-elements */
+        p:before {
+            content: "❤️";
+            font-size: 24px;
+            padding-right: 10px;
+        }
+
+        p:after {
+            content: "❤️";
+            font-size: 24px;
+            padding-left: 10px;
+        }
+
+        .intro-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #hellogif {
+            display: block;
+            margin: 0 auto; /* Centers the GIF horizontally */
+            max-width: 100%;
+        }
+
+        .question-container {
+        text-align: center;
+        margin-top: 50px;
+        }
+
+
+        button {
+            padding: 15px 30px;
+            border-radius: 30px; /* Makes the button round */
+            font-size: 16px;
+            font-weight: bold;
+            color: white; /* Text color */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            background-color: #FFC0CB;
+        }
+
+        button#no-button {
+            transition: top 0.5s, left 0.5s;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="intro-container">
+        <p>Hi Pookie!!</p>
+    </div>
+
+    <img id="hellogif" src="hellocat.gif" alt="gif of cat saying hello">
+
+    <div class="question-container">
+        <p>Will you be my valentine?</p>
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const noButton = document.getElementById('no-button');
+
+            noButton.addEventListener('mouseover', function() {
+                const newX = Math.random() * window.innerWidth - noButton.clientWidth;
+                const newY = Math.random() * window.innerHeight - noButton.clientHeight;
+                
+                noButton.style.position = 'absolute';
+                noButton.style.left = `${newX}px`;
+                noButton.style.top = `${newY}px`;
+            });
+        });
+
+        document.getElementById('yes-button').addEventListener('click', function() {
+            window.location.href = 'answer.html';
+        });
+        
+    </script>
+</body>
+</html>
